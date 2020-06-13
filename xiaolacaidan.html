@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .nav{
+            
+            height: 30px;
+           
+            background-color: pink;
+            text-align: center;
+            line-height: 30px;
+           
+            
+        }
+        .nav>li{
+            float: left;
+            width: 50px;
+           
+        }
+        .nav>li>ul{
+            border: 1px solid pink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">姓名</a>
+            <ul>
+                <li><a href="#">邮箱</a></li>
+                <li><a href="#">电话</a></li>
+                <li><a href="#">qq</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">姓名</a>
+            <ul>
+                <li><a href="#">邮箱</a></li>
+                <li><a href="#">电话</a></li>
+                <li><a href="#">qq</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">姓名</a>
+            <ul>
+                <li><a href="#">邮箱</a></li>
+                <li><a href="#">电话</a></li>
+                <li><a href="#">qq</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">姓名</a>
+            <ul>
+                <li><a href="#">邮箱</a></li>
+                <li><a href="#">电话</a></li>
+                <li><a href="#">qq</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        var nav=document.querySelector(".nav");
+        var lis=nav.children;
+        for(var i=0;i<lis.length;i++){
+            lis[i].onmouseover=function(){
+                this.children[1].style.display="block";
+            };
+            lis[i].onmouseout=function(){
+                this.children[1].style.display="";
+            }  
+        }
+    </script>
+</body>
+</html>
