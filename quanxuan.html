@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="qx">
+    <input type="radio" id="dx">
+    <input type="radio" id="dx">
+    <input type="radio" id="dx">
+
+   
+    <script>
+        var qx=document.querySelector("#qx");
+        var dx=document.querySelectorAll("#dx");
+        qx.onclick=function(){
+            for(var i=0;i<dx.length;i++){
+                dx[i].checked=this.checked;
+            }
+          
+        };
+        for(var i=0; i<dx.length;i++){
+            dx[i].onclick=function(){
+                var flag=true;
+                for(var i=0;i<dx.length;i++){
+                    if(!dx[i].checked){
+                        flag=false;
+                    }
+                }
+                qx.checked=flag;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
