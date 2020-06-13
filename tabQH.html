@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 200px;
+            width:900px;
+            margin:100px auto;
+           
+        }
+        .box ul{
+            overflow: hidden;
+        }
+        .box li{
+            float:left;
+            height: 30px;
+            width: 80px;
+            background-color: #ccc;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            list-style: none;
+            margin-right: 8px;
+        }
+        .box div{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+           <li>爱生活</li>
+           <li>爱生活</li>
+           <li>爱生活</li>
+           <li>爱生活</li>
+           <li>爱生活</li>
+        </ul>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+    <script>
+        var lis=document.querySelector("ul").querySelectorAll("li");
+        var items=document.querySelectorAll(".item");
+        console.log(items);
+        for(var i=0; i<lis.length; i++){
+            lis[i].setAttribute("index",i);
+         
+            lis[i].onclick=function(){
+                for(var i=0; i<lis.length; i++){
+                    lis[i].style.backgroundColor="";
+                }
+                this.style.backgroundColor="pink"
+                var index=this.getAttribute("index");
+                console.log(index);
+                for(var i=0; i<items.length; i++){
+                    items[i].style.display="none";
+                }
+                items[index].style.display="block";
+            }
+        }
+    </script>
+</body>
+</html>
